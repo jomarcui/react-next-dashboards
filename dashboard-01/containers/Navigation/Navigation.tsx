@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState } from 'react';
+import { useState } from 'react';
 import {
   ArticleOutlined,
   EmojiEventsOutlined,
@@ -7,12 +7,11 @@ import {
   MonitorWeightOutlined,
   ReceiptLongOutlined,
 } from '@mui/icons-material';
-import {
-  MenuListItemButtonStyled,
-  MenuListItemStyled,
-  MenuListStyled,
-  NavigationContainerStyled,
-} from './Navigation.styles';
+import { NavigationContainerStyled } from './Navigation.styles';
+import MenuList, {
+  MenuListItem,
+  MenuListItemButton,
+} from '../../components/Menu';
 
 const Navigation = () => {
   const [currentMenuListItemId, setCurrentMenuListItemId] = useState(0);
@@ -56,23 +55,23 @@ const Navigation = () => {
 
   return (
     <NavigationContainerStyled>
-      <MenuListStyled>
+      <MenuList>
         {menuItems.map(({ Icon, id }) => {
           const selected = currentMenuListItemId === id;
 
           return (
-            <MenuListItemStyled key={id}>
-              <MenuListItemButtonStyled
-                onClick={() => handleClick(id)}
+            <MenuListItem key={id}>
+              <MenuListItemButton
+                handleClick={() => handleClick(id)}
                 selected={selected}
                 type="button"
               >
                 {selected ? <Icon /> : <Icon style={{ color: '#767676' }} />}
-              </MenuListItemButtonStyled>
-            </MenuListItemStyled>
+              </MenuListItemButton>
+            </MenuListItem>
           );
         })}
-      </MenuListStyled>
+      </MenuList>
     </NavigationContainerStyled>
   );
 };

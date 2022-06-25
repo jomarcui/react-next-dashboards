@@ -2,12 +2,7 @@ import styled from '@emotion/styled';
 import { mq } from '../utilities/mediaQuery';
 import ComponentsLayout from '../components/Layout';
 import ContainersNavigation from '../containers/Navigation';
-
-const DashboardContainerStyled = styled.div`
-  ${mq['XS']} {
-    grid-area: Dashboard;
-  }
-`;
+import Dashboard from '../containers/Dashboard';
 
 const MainContainerStyled = styled.div`
   display: grid;
@@ -34,8 +29,8 @@ export default function Home() {
     <ComponentsLayout>
       <MainContainerStyled>
         <ContainersNavigation />
-        <DashboardContainerStyled>Dashboard</DashboardContainerStyled>
-        <OtherContainerStyled>Other</OtherContainerStyled>
+        <Dashboard />
+        <OtherContainerStyled />
       </MainContainerStyled>
     </ComponentsLayout>
   );
