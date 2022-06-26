@@ -8,9 +8,8 @@ const MainContainerStyled = styled.div`
   display: grid;
 
   ${mq['XS']} {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 1em 1em;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
     grid-template-areas:
       'Navigation'
       'Dashboard'
@@ -20,7 +19,7 @@ const MainContainerStyled = styled.div`
 
 const OtherContainerStyled = styled.div`
   ${mq['XS']} {
-    grid-area: Dashboard;
+    grid-area: Other;
   }
 `;
 

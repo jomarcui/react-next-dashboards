@@ -9,3 +9,38 @@ export const DashboardContainerStyled = styled.div`
     grid-area: Dashboard;
   }
 `;
+
+export const TransferActionButtonContainer = styled.div`
+  overflow-x: scroll;
+  white-space: nowrap;
+
+  ${mq['XS']} {
+    max-width: 425px;
+  }
+`;
+
+export const TransferActionButtonContent = styled.div`
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Rubik';
+  gap: 1em;
+  grid-template-rows: repeat(3, 1fr);
+`;
+
+export const TransferActionButtonContentFee = styled.div`
+  font: 500 1.125em 'Rubik';
+`;
+
+export const TransferActionButtonContentLabel = styled.div`
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const TransferActionButtonContentMore = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;

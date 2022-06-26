@@ -5,6 +5,6 @@ export const NavigationContainerStyled = styled.div`
   background-color: #ececf6;
 
   ${mq['XS']} {
-    grid-area: Dashboard;
+    grid-area: Navigation;
   }
 `;

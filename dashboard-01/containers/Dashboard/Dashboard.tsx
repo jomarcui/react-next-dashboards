@@ -1,14 +1,56 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
+import {
+  AccountBalanceOutlined,
+  CreditCardOutlined,
+  LocationCityOutlined,
+  MoreVertOutlined,
+  OtherHousesOutlined,
+} from '@mui/icons-material';
 import { useState } from 'react';
 import { InputText } from '../../components/Input';
-import { DashboardContainerStyled } from './Dashboard.styles';
+import { TransferActionButton } from '../../components/TransferAction';
+import {
+  DashboardContainerStyled,
+  TransferActionButtonContainer,
+  TransferActionButtonContent,
+  TransferActionButtonContentFee,
+  TransferActionButtonContentLabel,
+  TransferActionButtonContentMore,
+} from './Dashboard.styles';
 
 const Dashboard = () => {
   const [searchKeyword, setSearchKeyWord] = useState('');
 
   const handleChange = (event) => setSearchKeyWord(event.target.value);
+
+  const transferActions = [
+    {
+      fee: 1200,
+      Icon: CreditCardOutlined,
+      id: 0,
+      label: 'Transfer via Card Number',
+    },
+    {
+      fee: 1200,
+      Icon: OtherHousesOutlined,
+      id: 1,
+      label: 'Transfer to Other Banks',
+    },
+    {
+      fee: 1200,
+      Icon: AccountBalanceOutlined,
+      id: 2,
+      label: 'Transfer to Same Bank',
+    },
+    {
+      fee: 1200,
+      Icon: LocationCityOutlined,
+      id: 3,
+      label: 'Transfer to Other Bank',
+    },
+  ];
 
   return (
     <DashboardContainerStyled>
@@ -39,6 +81,32 @@ const Dashboard = () => {
           />
         </div>
       </div>
+      <TransferActionButtonContainer>
+        <div css={{ marginTop: '2em' }}>
+          {transferActions.map(({ fee, Icon, id, label, ...props }) => {
+            const labelPartA = label.slice(0, 12);
+            const labelPartB = label.slice(12);
+
+            return (
+              <TransferActionButton key={id} value={label} {...props}>
+                <TransferActionButtonContent>
+                  <TransferActionButtonContentMore>
+                    <Icon fontSize="large" />
+                    <MoreVertOutlined />
+                  </TransferActionButtonContentMore>
+                  <TransferActionButtonContentLabel>
+                    <span>{labelPartA}</span>
+                    <span>{labelPartB}</span>
+                  </TransferActionButtonContentLabel>
+                  <TransferActionButtonContentFee>
+                    ${fee}
+                  </TransferActionButtonContentFee>
+                </TransferActionButtonContent>
+              </TransferActionButton>
+            );
+          })}
+        </div>
+      </TransferActionButtonContainer>
     </DashboardContainerStyled>
   );
 };
