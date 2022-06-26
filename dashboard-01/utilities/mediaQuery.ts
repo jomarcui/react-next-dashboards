@@ -1,9 +1,5 @@
 export const Breakpoints: { [index: string]: number } = {
-  XS: 420,
-  SM: 576,
-  MD: 768,
-  LG: 992,
-  XL: 1200,
+  XS: 768,
 };
 
 export const mq = Object.keys(Breakpoints)
