@@ -6,6 +6,7 @@ interface IMenuListItemButtonStyled {
 }
 
 export const ButtonStyled = styled.button<IMenuListItemButtonStyled>`
+  background-color: '#ececf6';
   border: none;
   border-bottom: 2px solid
     ${({ selected }) => (selected ? '#171522' : '#ececf6')};
