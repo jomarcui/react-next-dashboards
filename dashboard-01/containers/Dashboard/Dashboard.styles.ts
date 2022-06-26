@@ -34,6 +34,7 @@ export const TransferActionButtonContentFee = styled.div`
 
 export const TransferActionButtonContentLabel = styled.div`
   align-items: start;
+  color: #9d9d9f;
   display: flex;
   flex-direction: column;
 `;

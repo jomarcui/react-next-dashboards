@@ -92,7 +92,7 @@ const Dashboard = () => {
                 <TransferActionButtonContent>
                   <TransferActionButtonContentMore>
                     <Icon fontSize="large" />
-                    <MoreVertOutlined />
+                    <MoreVertOutlined css={{ color: '#9d9d9f' }} />
                   </TransferActionButtonContentMore>
                   <TransferActionButtonContentLabel>
                     <span>{labelPartA}</span>
