@@ -6,5 +6,6 @@ export const NavigationContainerStyled = styled.div`
 
   ${mq['XS']} {
     grid-area: Navigation;
+    overflow-x: scroll;
   }
 `;

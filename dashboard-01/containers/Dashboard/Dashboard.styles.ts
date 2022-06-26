@@ -7,6 +7,7 @@ export const DashboardContainerStyled = styled.div`
 
   ${mq['XS']} {
     grid-area: Dashboard;
+    overflow: hidden;
   }
 `;
 

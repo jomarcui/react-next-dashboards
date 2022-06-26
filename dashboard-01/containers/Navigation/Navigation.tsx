@@ -56,7 +56,7 @@ const Navigation = () => {
   return (
     <NavigationContainerStyled>
       <MenuList>
-        {menuItems.map(({ Icon, id }) => {
+        {menuItems.map(({ Icon, label, id }) => {
           const selected = currentMenuListItemId === id;
 
           return (
@@ -64,6 +64,7 @@ const Navigation = () => {
               <MenuListItemButton
                 handleClick={() => handleClick(id)}
                 selected={selected}
+                title={label}
                 type="button"
               >
                 {selected ? <Icon /> : <Icon style={{ color: '#767676' }} />}
