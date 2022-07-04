@@ -3,7 +3,7 @@ import { mq } from '../../utilities/mediaQuery';
 
 export const DashboardContainerStyled = styled.div`
   background-color: #f3f3fb;
-  padding: 2em;
+  padding: 0 2em;
 
   ${mq['XS']} {
     grid-area: Dashboard;
@@ -11,7 +11,8 @@ export const DashboardContainerStyled = styled.div`
   }
 `;
 
-export const TransferActionButtonContainer = styled.div`
+export const TransferActionButtonContainerStyled = styled.div`
+  margin: 2em 0;
   overflow-x: scroll;
   white-space: nowrap;
 
@@ -20,7 +21,7 @@ export const TransferActionButtonContainer = styled.div`
   }
 `;
 
-export const TransferActionButtonContent = styled.div`
+export const TransferActionButtonContentStyled = styled.div`
   align-items: start;
   display: flex;
   flex-direction: column;
@@ -29,18 +30,18 @@ export const TransferActionButtonContent = styled.div`
   grid-template-rows: repeat(3, 1fr);
 `;
 
-export const TransferActionButtonContentFee = styled.div`
+export const TransferActionButtonContentFeeStyled = styled.div`
   font: 500 1.125em 'Rubik';
 `;
 
-export const TransferActionButtonContentLabel = styled.div`
+export const TransferActionButtonContentLabelStyled = styled.div`
   align-items: start;
   color: #9d9d9f;
   display: flex;
   flex-direction: column;
 `;
 
-export const TransferActionButtonContentMore = styled.div`
+export const TransferActionButtonContentMoreStyled = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;

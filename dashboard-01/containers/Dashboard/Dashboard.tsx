@@ -11,13 +11,14 @@ import {
 import { useState } from 'react';
 import { InputText } from '../../components/Input';
 import { TransferActionButton } from '../../components/TransferAction';
+import Balance from '../Balance';
 import {
   DashboardContainerStyled,
-  TransferActionButtonContainer,
-  TransferActionButtonContent,
-  TransferActionButtonContentFee,
-  TransferActionButtonContentLabel,
-  TransferActionButtonContentMore,
+  TransferActionButtonContainerStyled,
+  TransferActionButtonContentStyled,
+  TransferActionButtonContentFeeStyled,
+  TransferActionButtonContentLabelStyled,
+  TransferActionButtonContentMoreStyled,
 } from './Dashboard.styles';
 
 const Dashboard = () => {
@@ -54,7 +55,7 @@ const Dashboard = () => {
 
   return (
     <DashboardContainerStyled>
-      <div>
+      <div style={{ margin: '2em 0' }}>
         <h1
           css={{
             fontWeight: 700,
@@ -81,32 +82,33 @@ const Dashboard = () => {
           />
         </div>
       </div>
-      <TransferActionButtonContainer>
-        <div css={{ marginTop: '2em' }}>
+      <TransferActionButtonContainerStyled>
+        <div>
           {transferActions.map(({ fee, Icon, id, label, ...props }) => {
             const labelPartA = label.slice(0, 12);
             const labelPartB = label.slice(12);
 
             return (
               <TransferActionButton key={id} value={label} {...props}>
-                <TransferActionButtonContent>
-                  <TransferActionButtonContentMore>
+                <TransferActionButtonContentStyled>
+                  <TransferActionButtonContentMoreStyled>
                     <Icon fontSize="large" />
                     <MoreVertOutlined css={{ color: '#9d9d9f' }} />
-                  </TransferActionButtonContentMore>
-                  <TransferActionButtonContentLabel>
+                  </TransferActionButtonContentMoreStyled>
+                  <TransferActionButtonContentLabelStyled>
                     <span>{labelPartA}</span>
                     <span>{labelPartB}</span>
-                  </TransferActionButtonContentLabel>
-                  <TransferActionButtonContentFee>
+                  </TransferActionButtonContentLabelStyled>
+                  <TransferActionButtonContentFeeStyled>
                     ${fee}
-                  </TransferActionButtonContentFee>
-                </TransferActionButtonContent>
+                  </TransferActionButtonContentFeeStyled>
+                </TransferActionButtonContentStyled>
               </TransferActionButton>
             );
           })}
         </div>
-      </TransferActionButtonContainer>
+      </TransferActionButtonContainerStyled>
+      <Balance />
     </DashboardContainerStyled>
   );
 };

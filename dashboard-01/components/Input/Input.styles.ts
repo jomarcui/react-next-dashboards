@@ -5,7 +5,7 @@ export const SearchOutlinedStyled = styled(SearchOutlined)`
   margin: 0 0.5em;
 `;
 
-export const TextContainer = styled.div`
+export const TextContainerStyled = styled.div`
   align-items: center;
   background-color: #ffffff;
   border-radius: 1em;

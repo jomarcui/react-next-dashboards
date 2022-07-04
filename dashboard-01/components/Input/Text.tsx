@@ -1,14 +1,14 @@
 import {
   SearchOutlinedStyled,
-  TextContainer,
+  TextContainerStyled,
   TextStyled,
 } from './Input.styles';
 
 const Text = ({ value, ...props }) => (
-  <TextContainer>
+  <TextContainerStyled>
     <SearchOutlinedStyled />
     <TextStyled value={value} {...props} />
-  </TextContainer>
+  </TextContainerStyled>
 );
 
 export default Text;
